@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const SidebarContainer = styled.aside`
-  position: relative;
+  position: sticky;
   overflow: hidden;
   transition: 0.5s ease-in-out;
   background-color: #1e1e1f;

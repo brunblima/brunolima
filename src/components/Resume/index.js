@@ -32,8 +32,8 @@ const Resume = () => (
           <p></p>
         </li>
         <li>
-          <h4>Gestão da Tecnologia da Informação</h4>
-          <span>2015 - 2017</span>
+          <h4>Full-Stack JavaScript</h4>
+          <span>2023 - 2024</span>
           <p></p>
         </li>
       </TimeLineList>
