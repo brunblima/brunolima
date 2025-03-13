@@ -72,6 +72,16 @@ const Resume = () => (
         <li>
           <TitleWrapper>
             <h5>React</h5>
+            <data value="80">80%</data>
+          </TitleWrapper>
+          <SkillProgress>
+            <SkillProgressFill style={{ width: "80%" }} />
+          </SkillProgress>
+        </li>
+
+        <li>
+          <TitleWrapper>
+            <h5>Nextjs</h5>
             <data value="70">70%</data>
           </TitleWrapper>
           <SkillProgress>
@@ -92,20 +102,20 @@ const Resume = () => (
         <li>
           <TitleWrapper>
             <h5>JavaScript</h5>
-            <data value="70">70%</data>
+            <data value="80">80%</data>
           </TitleWrapper>
           <SkillProgress>
-            <SkillProgressFill style={{ width: "70%" }} />
+            <SkillProgressFill style={{ width: "80%" }} />
           </SkillProgress>
         </li>
 
         <li>
           <TitleWrapper>
             <h5>TypeScript</h5>
-            <data value="60">60%</data>
+            <data value="70">70%</data>
           </TitleWrapper>
           <SkillProgress>
-            <SkillProgressFill style={{ width: "60%" }} />
+            <SkillProgressFill style={{ width: "70%" }} />
           </SkillProgress>
         </li>
 
@@ -120,7 +130,7 @@ const Resume = () => (
         </li>
 
         <li>
-          <TitleWrapper>  
+          <TitleWrapper>
             <h5>Firebase</h5>
             <data value="80">80%</data>
           </TitleWrapper>
@@ -128,7 +138,6 @@ const Resume = () => (
             <SkillProgressFill style={{ width: "80%" }} />
           </SkillProgress>
         </li>
-
       </ul>
     </Skill>
   </Container>
