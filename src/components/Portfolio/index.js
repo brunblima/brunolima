@@ -11,12 +11,8 @@ import {
 import { FaAngleDown } from "react-icons/fa";
 import { BsEye } from "react-icons/bs";
 
-import imageProject01 from "../../assets/projects/project-1.jpg";
-import imageProject02 from "../../assets/projects/project-2.png";
-import imageProject03 from "../../assets/projects/project-3.jpg";
-import imageProject04 from "../../assets/projects/project-4.png";
-import imageProject05 from "../../assets/projects/project-5.png";
-import imageProject06 from "../../assets/projects/project-6.png";
+import imageProject01 from "../../assets/projects/System-Forms.png";
+import imageProject02 from "../../assets/projects/central-de-ajuda.jpg";
 
 const Portfolio = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -38,64 +34,17 @@ const Portfolio = () => {
       id: 1,
       image: imageProject01,
       category: "Web",
-      title: "Project 1",
-      description: "Description 1",
+      title: "Formulários",
+      description: "Criação de Formulários",
+      link: "https://system-forms.vercel.app/",
     },
     {
       id: 2,
       image: imageProject02,
-      category: "Web",
-      title: "Project 2",
-      description: "Description 2",
-    },
-    {
-      id: 3,
-      image: imageProject03,
-      category: "Web",
-      title: "Project 3",
-      description: "Description 3",
-    },
-    {
-      id: 4,
-      image: imageProject04,
-      category: "Web",
-      title: "Project 4",
-      description: "Description 4",
-    },
-    {
-      id: 5,
-      image: imageProject05,
       category: "Mobile",
-      title: "Project 5",
-      description: "Description 5",
-    },
-    {
-      id: 6,
-      image: imageProject06,
-      category: "Mobile",
-      title: "Project 6",
-      description: "Description 6",
-    },
-    {
-      id: 7,
-      image: imageProject06,
-      category: "Mobile",
-      title: "Project 6",
-      description: "Description 6",
-    },
-    {
-      id: 8,
-      image: imageProject06,
-      category: "Mobile",
-      title: "Project 6",
-      description: "Description 6",
-    },
-    {
-      id: 9,
-      image: imageProject06,
-      category: "Mobile",
-      title: "Project 6",
-      description: "Description 6",
+      title: "Central de Ajuda",
+      description: "Para abrir chamados de suporte",
+      link: "https://github.com/brunblima/react-native-helpdesk",
     },
   ];
 
@@ -142,7 +91,7 @@ const Portfolio = () => {
 
         <FilterSelectBox className={isDropdownOpen ? "active" : ""}>
           <button onClick={toggleDropdown}>
-          <div>{selectedCategory}</div> 
+            <div>{selectedCategory}</div>
             <div>
               <FaAngleDown />
             </div>
@@ -160,15 +109,16 @@ const Portfolio = () => {
             <li
               key={project.id}
               category={project.category}
-              onClick={() => setActiveProjectId(project.id)}
               className={activeProjectId === project.id ? "active" : ""}
             >
               <a>
                 <figure>
                   <img src={project.image} alt={project.title} />
-                  <IconBox>
-                    <BsEye size={25} />
-                  </IconBox>
+                  <button onClick={() => window.open(project.link, "_blank")}>
+                    <IconBox>
+                      <BsEye size={25} />
+                    </IconBox>
+                  </button>
                 </figure>
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>

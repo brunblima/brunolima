@@ -80,6 +80,7 @@ export const Projects = styled.section`
 
   img {
     width: 100%;
+    height: 200px;
     object-fit: cover;
     transition: transform 0.25s ease;
   }
