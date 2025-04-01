@@ -13,6 +13,7 @@ import { BsEye } from "react-icons/bs";
 
 import imageProject01 from "../../assets/projects/System-Forms.png";
 import imageProject02 from "../../assets/projects/central-de-ajuda.jpg";
+import imageProject03 from "../../assets/projects/gerador-de-paletas.png";
 
 const Portfolio = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -45,6 +46,14 @@ const Portfolio = () => {
       title: "Central de Ajuda",
       description: "Para abrir chamados de suporte",
       link: "https://github.com/brunblima/react-native-helpdesk",
+    },
+    {
+      id: 3,
+      image: imageProject03,
+      category: "Web",
+      title: "Gerador de Paletas",
+      description: "Gerar paletas de cores",
+      link: "https://gerador-de-paletas.vercel.app/",
     },
   ];
 
