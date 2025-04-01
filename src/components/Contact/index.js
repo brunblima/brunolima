@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Container,
   Header,
@@ -13,6 +13,35 @@ import {
 import { FaPaperPlane } from "react-icons/fa";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [status, setStatus] = useState("");
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("Enviando...");
+
+    const response = await fetch("https://formspree.io/f/xovekary", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
+      setStatus("Mensagem enviada com sucesso!");
+      setFormData({ name: "", email: "", message: "" });
+    } else {
+      setStatus("Erro ao enviar a mensagem.");
+    }
+  };
+
   return (
     <Container>
       <Header>
@@ -33,19 +62,39 @@ const Contact = () => {
 
       <ContactForm>
         <h3>Formulario para Contato</h3>
-        <Form>
+        <Form onSubmit={handleSubmit}>
           <InputWrapper>
-            <input type="text" placeholder="Name" />
-            <input type="email" placeholder="Email" />
+            <input
+              type="text"
+              name="name"
+              placeholder="Name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
           </InputWrapper>
 
-          <TextArea placeholder="Message"></TextArea>
+          <TextArea
+            name="message"
+            placeholder="Message"
+            value={formData.message}
+            onChange={handleChange}
+            required
+          ></TextArea>
           <Submit type="submit">
-            {" "}
             <FaPaperPlane />
             Enviar
           </Submit>
         </Form>
+        {status && <p>{status}</p>}
       </ContactForm>
     </Container>
   );
